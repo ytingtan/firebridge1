@@ -1,3 +1,4 @@
+import React from 'react';
 import cards from '../img/3.jpg'
 import people from '../img/4.jpg'
 

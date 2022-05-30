@@ -1,23 +1,19 @@
 import React from 'react';
-import Header from './components/Header';
-import About from './components/About';
-import TopStats from './components/TopStats';
-import LogIn from './components/LogIn';
-import SignUp from './components/SignUp';
+import { useAuth } from './hooks/useAuth';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-
+import Dashboard from './pages/Dashboard';
+import LandingPage from './pages/LandingPage';
+import Header from './components/Header';
+import Header2 from './components/Header2';
 
 function App() {
+
+  const { user } = useAuth();
   return (
     <div className="App">
-    <Header />
-    <main>
-    <About />
-    <TopStats />
-    <LogIn />
-    <SignUp />
-    </main>
+        {user ? <Header2 /> : <Header />}
+        {user ? <Dashboard /> : <LandingPage />}
     </div>
   );
 }
